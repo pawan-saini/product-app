@@ -1,0 +1,95 @@
+/* Home Page CSS | Access Details Component | Memeber Component */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: "";
+  line-height: normal;
+}
+
+/* Home Page CSS | Access Details Component */
+.access-details-card-pagination > .swiper-pagination-bullet {
+  background-color: var(--bg-light);
+}
+.access-details-card-pagination .swiper-pagination-bullet-active {
+  background-color: var(--accent-color);
+}
+
+/* Home Page CSS |  Memeber Component */
+.members-card-pagination > .swiper-pagination-bullet {
+  background-color: var(--bg-dark);
+}
+.members-card-pagination .swiper-pagination-bullet-active {
+  background-color: var(--accent-color);
+}
+
+/* AiMentor Subjects and Topic slider in Mobile View */
+.subject-and-topic-pagination > .swiper-pagination-bullet {
+  background-color: var(--bg-dark);
+}
+.subject-and-topic-pagination .swiper-pagination-bullet-active {
+  background-color: var(--accent-color);
+}
+
+/* Creator Page in Creator Course Details */
+.course-details-slide-pagination > .swiper-pagination-bullet {
+  background-color: var(--bg-dark);
+}
+.course-details-slide-pagination .swiper-pagination-bullet-active {
+  background-color: var(--accent-color);
+}
+
+/* Creator2 Page */
+.creator-course-content-card-slider-pagination > .swiper-pagination-bullet {
+  background-color: #fff;
+}
+.creator-course-content-card-slider-pagination
+  .swiper-pagination-bullet-active {
+  background-color: var(--accent-color);
+}
+
+/* Home Page CSS | Memebership Card Component */
+.diagonal-upper {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 130px), 0 100%);
+}
+.diagonal-down {
+  clip-path: polygon(0 130px, 100% 0, 100% 100%, 0 100%);
+  margin-top: -130px;
+  padding-top: 130px;
+}
+
+.diagonalBottomDownRight {
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 85%);
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .diagonal-upper {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 60px), 0 100%);
+  }
+  .diagonal-down {
+    clip-path: polygon(0 60px, 100% 0, 100% 100%, 0 100%);
+    padding-top: 60px;
+  }
+  .diagonalBottomDownRight {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 95%);
+  }
+}
+/* .formatPre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 15px;
+}
+
+pre {
+  overflow-x: auto;
+} */
+
+.wave1-circle {
+  animation-delay: 0.1s;
+}
+.wave2-circle {
+  animation-delay: 0.2s;
+}
+.wave3-circle {
+  animation-delay: 0.3s;
+}
