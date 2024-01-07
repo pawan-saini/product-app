@@ -16,29 +16,33 @@ export default function ProductCard({ item }) {
     }, 1000);
   };
   return (
-    <div
-      key={item.id}
-      className="bg-white p-4 shadow-md rounded-md transition-transform transform hover:scale-105"
-    >
-      <Link to={`/${item.id}`}>
-        <img
-          src={item.image}
-          alt={item.title}
-          className="object-scale-down w-full h-48 mb-4 rounded-md"
-        />
-      </Link>
-      <h2 className="text-lg font-semibold mb-2">{item.title}</h2>
-      {/* <p className="text-gray-600">{item.description}</p> */}
-      <p className="text-blue-500 font-bold mt-2">${item.price}</p>
-
-      <button
-        className={`bg-blue-500 text-white px-4 py-2 rounded-md transition-transform transform ${
-          isClicked ? "scale-110" : ""
-        } ease-in-out`}
-        onClick={handleAddToCart}
-      >
-        Add to Cart
-      </button>
+    <div className="max-w-sm w-full rounded overflow-hidden shadow-lg hover:shadow-xl transition duration-300 ease-in-out transition-transform transform hover:scale-105">
+      <div className="relative">
+        <Link to={`/${item.id}`}>
+          <img
+            className="w-full h-64 object-scale-down object-center"
+            src={item.image}
+            alt={item.title}
+          />
+        </Link>
+        <div className="absolute top-0 right-0 bg-red-500 text-white p-2 m-2 rounded-full">
+          New
+        </div>
+      </div>
+      <div className="px-6 py-4">
+        <div className="font-bold text-xl mb-2">{item.title}</div>
+      </div>
+      <div className="px-6 py-4 flex justify-between items-center">
+        <span className="text-gray-600 font-bold text-lg">${item.price}</span>
+        <button
+          className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ${
+            isClicked ? "scale-110" : ""
+          } ease-in-out`}
+          onClick={handleAddToCart}
+        >
+          Add to Cart
+        </button>
+      </div>
     </div>
   );
 }

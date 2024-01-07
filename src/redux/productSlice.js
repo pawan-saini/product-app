@@ -33,16 +33,14 @@ const productsSlice = createSlice({
       state.sortBy = sortType;
 
       state.products.sort((a, b) => {
-        if (criteria != "title" && orderBy) {
-          const comparison = a[criteria] - b[criteria];
-          return orderBy ? comparison : -comparison;
-        }
-
-        if (criteria != "title" && !orderBy) {
+        // sorting by price
+        if (criteria === "price") {
           const comparison =
             a[criteria] < b[criteria] ? -1 : a[criteria] > b[criteria] ? 1 : 0;
           return orderBy ? comparison : -comparison;
         }
+        // sorting by title
+
         if (criteria === "title") {
           const valueA = a[criteria].toUpperCase(); // Convert to uppercase for case-insensitive sorting
           const valueB = b[criteria].toUpperCase();

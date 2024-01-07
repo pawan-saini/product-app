@@ -1,14 +1,10 @@
 // * Components
-// import { useQuery } from "@tanstack/react-query";
+
 import ProductList from "../../components/HomePage/ProductList/ProductList";
 import { useEffect, useState } from "react";
 
-// import Loader from "../../components/UI/Loader/Loader";
-
-// * APIs
-// import { getProducts } from "../../api/services/Home";
 import { useDispatch, useSelector } from "react-redux";
-// import { setProducts } from "../../redux/productSlice";
+
 import { fetchProducts, sortProducts } from "../../redux/productSlice";
 
 export default function HomePage() {
@@ -24,32 +20,6 @@ export default function HomePage() {
     // Sort the products based on the provided criteria
     dispatch(sortProducts(type));
   };
-
-  // const getSortedProducts = () => {
-  //   let sortedProducts = [...snapshot.products];
-  //   if (sortType === "price") {
-  //     sortedProducts = sortedProducts.sort((a, b) => a.price - b.price);
-  //   } else if (sortType === "name") {
-  //     sortedProducts = sortedProducts.sort((a, b) =>
-  //       a.title.localeCompare(b.title)
-  //     );
-  //   }
-  //   return sortedProducts;
-  // };
-
-  // const getProductAPI = useQuery({
-  //   queryKey: ["getProducts"],
-  //   queryFn: () => getProducts(),
-  //   refetchOnWindowFocus: false,
-  // });
-
-  // const { data, isLoading } = getProductAPI;
-  // if (isLoading)
-  //   return (
-  //     <div className="min-h-screen flex justify-center items-center">
-  //       <Loader />
-  //     </div>
-  //   );
 
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
@@ -71,9 +41,10 @@ export default function HomePage() {
               value={sortType}
             >
               <option value=""></option>
-              <option value="price-true">Price(Low-High)</option>
-              <option value="price-false">Price(High-Low)</option>
-              <option value="title-true">Name</option>
+              <option value="price-true">Price(Low to High)</option>
+              <option value="price-false">Price(High to Low)</option>
+              <option value="title-true">Name(A to Z)</option>
+              <option value="title-false">Name(Z to A)</option>
             </select>
           </div>
 
